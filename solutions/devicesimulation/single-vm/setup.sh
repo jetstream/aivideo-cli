@@ -27,7 +27,7 @@ export PCS_IOTHUB_CONNSTRING=""
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        --solution-setup-url)      PCS_SOLUTION_SETUP_URL="$2" ;; # e.g. https://raw.githubusercontent.com/Azure/pcs-cli/DS-1.0.0/solutions/devicesimulation
+        --solution-setup-url)      PCS_SOLUTION_SETUP_URL="$2" ;; # e.g. https://raw.githubusercontent.com/jetstream/aivideo-cli/DS-1.0.0/solutions/devicesimulation
         --release-version)         PCS_RELEASE_VERSION="$2" ;;
         --docker-tag)              PCS_DOCKER_TAG="$2" ;;
         --solution-type)           PCS_SOLUTION_TYPE="$2" ;;
@@ -75,7 +75,7 @@ if [ -z "$PCS_RELEASE_VERSION" ]; then
 fi
 
 # Note: Solution = devicesimulation
-REPOSITORY="https://raw.githubusercontent.com/Azure/pcs-cli/${PCS_RELEASE_VERSION}/solutions/devicesimulation/single-vm"
+REPOSITORY="https://raw.githubusercontent.com/jetstream/aivideo-cli/${PCS_RELEASE_VERSION}/solutions/devicesimulation/single-vm"
 SCRIPTS_URL="${REPOSITORY}/scripts/"
 SETUP_URL="${REPOSITORY}/setup/"
 
