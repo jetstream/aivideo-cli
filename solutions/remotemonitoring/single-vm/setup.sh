@@ -96,6 +96,7 @@ install_docker_ce() {
 
     apt-get update -o Acquire::CompressionTypes::Order::=gz \
         && apt-mark hold walinuxagent \
+        && apt-mark hold console-setup \
         && apt-get upgrade -y \
         && apt-get update \
         && apt-get remove docker docker-engine docker.io \
