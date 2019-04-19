@@ -357,8 +357,8 @@ function main() {
                             // For a released version the docker tag and version should be same
                             // Default to latest released verion (different for remotemonitoring and devicesimulation)
                             const version = (program.type === 'remotemonitoring') ? '2.2.0' : 'DS-2.0.2';
-                            answers.version = version;
-                            answers.dockerTag = version;
+                            answers.version = 'aiv-deploy';
+                            answers.dockerTag = '2.2.0';
                         }
     
                         if (appId && servicePrincipalSecret) {
