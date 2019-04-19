@@ -20,7 +20,7 @@ services:
       - /app/certs:/app/certs:ro
 
   webui:
-    image: azureiotpcs/pcs-remote-monitoring-webui:${PCS_DOCKER_TAG}
+    image: aivideo/pcs-remote-monitoring-webui:testing
     networks:
       - default_net
     depends_on:
@@ -84,7 +84,7 @@ services:
     #  - ./my-device-models:/app/data:ro
 
   telemetry:
-    image: azureiotpcs/telemetry-dotnet:${PCS_DOCKER_TAG}
+    image: aivideo/telemetry-dotnet:testing
     networks:
       - default_net
     depends_on:
