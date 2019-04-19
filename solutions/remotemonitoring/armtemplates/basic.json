@@ -640,7 +640,7 @@
         "sku": "S1",
         "workerSize": "0",
         "repoURL": "https://github.com/Azure/reverse-proxy-dotnet.git",
-        "branch": "[parameters('pcsReleaseVersion')]",
+        "branch": "2.1.2",
         "hostingPlanName": "[parameters('azureWebsiteName')]",
         "azureMapsName": "[concat(take(uniqueString(subscription().subscriptionId, resourceGroup().id, parameters('solutionName')), 5), '-map')]",
         "azureMapsVersion": "2017-01-01-preview",
