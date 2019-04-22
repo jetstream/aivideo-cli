@@ -21,7 +21,7 @@ services:
 
   webui:
 #    image: azureiotpcs/pcs-remote-monitoring-webui:${PCS_DOCKER_TAG}
-    image: aivideo/pcs-remote-monitoring-webui:testing
+    image: aivideo/pcs-remote-monitoring-webui:aiv-deploy
     networks:
       - default_net
     depends_on:
