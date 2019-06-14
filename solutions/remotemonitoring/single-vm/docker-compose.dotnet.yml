@@ -2,7 +2,7 @@ version: '2'
 
 services:
   reverseproxy:
-    image: azureiotpcs/remote-monitoring-nginx:${PCS_DOCKER_TAG}
+    image: azureiotpcs/remote-monitoring-nginx:2.1.2
     networks:
       - default_net
     ports:
@@ -20,8 +20,7 @@ services:
       - /app/certs:/app/certs:ro
 
   webui:
-#    image: azureiotpcs/pcs-remote-monitoring-webui:${PCS_DOCKER_TAG}
-    image: aivideo/pcs-remote-monitoring-webui:aiv-deploy
+    image: azureaivideo/pcs-remote-monitoring-webui:3.0.0
     networks:
       - default_net
     depends_on:
@@ -35,7 +34,7 @@ services:
       - /app/webui-config.js:/app/build/webui-config.js:ro
 
   auth:
-    image: azureiotpcs/pcs-auth-dotnet:${PCS_DOCKER_TAG}
+    image: azureiotpcs/pcs-auth-dotnet:2.1.2
     networks:
       - default_net
     environment:
@@ -50,7 +49,7 @@ services:
       - PCS_APPLICATION_SECRET
 
   iothubmanager:
-    image: azureiotpcs/iothub-manager-dotnet:${PCS_DOCKER_TAG}
+    image: azureiotpcs/iothub-manager-dotnet:2.1.2
     networks:
       - default_net
     depends_on:
@@ -102,8 +101,7 @@ services:
       - /tmp/share:/tmp/share
 
   telemetry:
-#    image: azureiotpcs/telemetry-dotnet:${PCS_DOCKER_TAG}
-    image: aivideo/telemetry-dotnet:testing
+    image: azureaivideo/telemetry-dotnet:3.0.0
     networks:
       - default_net
     depends_on:
@@ -131,7 +129,7 @@ services:
       - PCS_SOLUTION_WEBSITE_URL
 
   config:
-    image: azureiotpcs/pcs-config-dotnet:${PCS_DOCKER_TAG}
+    image: azureiotpcs/pcs-config-dotnet:2.1.2
     networks:
       - default_net
     depends_on:
@@ -158,7 +156,7 @@ services:
       - PCS_SUBSCRIPTION_ID
 
   storageadapter:
-    image: azureiotpcs/pcs-storage-adapter-dotnet:${PCS_DOCKER_TAG}
+    image: azureiotpcs/pcs-storage-adapter-dotnet:2.1.2
     networks:
       - default_net
     environment:
@@ -170,7 +168,7 @@ services:
       - PCS_APPLICATION_SECRET
 
   asamanager:
-    image: azureiotpcs/asa-manager-dotnet:${PCS_DOCKER_TAG}
+    image: azureiotpcs/asa-manager-dotnet:2.1.2
     networks:
       - default_net
     depends_on:
