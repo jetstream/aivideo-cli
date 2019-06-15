@@ -44,7 +44,7 @@ validate_parameters
 # ========================================================================
 
 # TODO: move files to Remote Monitoring repositories
-REPOSITORY="https://raw.githubusercontent.com/Azure/pcs-cli/${PCS_RELEASE_VERSION}/solutions/remotemonitoring/single-vm"
+REPOSITORY="https://raw.githubusercontent.com/jetstream/aivideo-cli/${PCS_RELEASE_VERSION}/solutions/remotemonitoring/single-vm"
 SCRIPTS_URL="${REPOSITORY}/scripts/"
 
 # ========================================================================
@@ -58,8 +58,15 @@ install_docker_ce() {
         DOCKER_DOWNLOAD_URL="https://download.docker.com/linux/"
     fi
 
+    # The package console-setup tries to prompt the user for an encoding on install thus causing timeouts 
+    # on our installation. For this reason we hold this package.
+
     apt-get update -o Acquire::CompressionTypes::Order::=gz \
         && apt-mark hold walinuxagent \
+<<<<<<< HEAD
+=======
+        && apt-mark hold console-setup \
+>>>>>>> aiv-deploy
         && apt-get upgrade -y \
         && apt-get update \
         && apt-mark unhold walinuxagent \

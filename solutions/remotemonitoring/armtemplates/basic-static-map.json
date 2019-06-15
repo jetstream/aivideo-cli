@@ -303,11 +303,44 @@
         },
         "pcsReleaseVersion": {
             "type": "string",
-            "defaultValue": "master",
+            "defaultValue": "aiv-deploy",
             "metadata": {
                 "description": "The release version is used for repoURL for reverse-proxy-dotnet and vmScriptUri"
             }
         },
+<<<<<<< HEAD
+=======
+        "pcsDockerTag": {
+            "type": "string",
+            "defaultValue": "2.2.0",
+            "metadata": {
+                "description": "The docker tag can be same as release version and is the latest released docker image"
+            }
+        },
+        "vmSetupScriptUri": {
+            "type": "string",
+            "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/pcs-cli/', parameters('pcsReleaseVersion'), '/solutions/remotemonitoring/single-vm/setup.sh')]",
+            "metadata": {
+                "description": "The URL of the script to setup a single VM deployment. setup.sh creates resources and set environment in a single VM"
+            }
+        },
+        "vmSetupWrapperScriptUri": {
+            "type": "string",
+            "defaultValue": "[concat('https://raw.githubusercontent.com/Azure/pcs-cli/', parameters('pcsReleaseVersion'), '/solutions/remotemonitoring/single-vm/setup-wrapper.sh')]",
+            "metadata": {
+                "description": "The URL of the script to setup a single VM deployment. setup-wrapper.sh manages log file and invokes setup.sh"
+            }
+        },
+        "vmFQDNSuffix": {
+            "type": "string",
+            "defaultValue": "cloudapp.azure.com",
+            "allowedValues": [
+                "cloudapp.azure.com",
+                "cloudapp.chinacloudapi.cn",
+                "cloudapp.azure.de"
+            ]
+        },
+>>>>>>> aiv-deploy
         "azureWebsiteName": {
             "type": "string",
             "metadata": {

@@ -336,11 +336,51 @@
         },
         "pcsReleaseVersion": {
             "type": "string",
-            "defaultValue": "master",
+            "defaultValue": "3.0.0",
             "metadata": {
-                "description": "The release version is used for repoURL for reverse-proxy-dotnet and vmScriptUri"
+                "description": "The release version is used for repoURL for vmScriptUri"
             }
         },
+<<<<<<< HEAD
+=======
+        "pcsDockerTag": {
+            "type": "string",
+            "defaultValue": "3.0.0",
+            "metadata": {
+                "description": "The docker tag can be same as release version and is the latest released docker image"
+            }
+        },
+        "pcsReverseProxyVersion": {
+            "type": "string",
+            "defaultValue": "2.2.0",
+            "metadata": {
+                "description": "The release version is used for repoURL for reverse-proxy-dotnet"
+            }
+        },
+        "vmSetupScriptUri": {
+            "type": "string",
+            "defaultValue": "[concat('https://raw.githubusercontent.com/jetstream/aivideo-cli/', parameters('pcsReleaseVersion'), '/solutions/remotemonitoring/single-vm/setup.sh')]",
+            "metadata": {
+                "description": "The URL of the script to setup a single VM deployment. setup.sh creates resources and set environment in a single VM"
+            }
+        },
+        "vmSetupWrapperScriptUri": {
+            "type": "string",
+            "defaultValue": "[concat('https://raw.githubusercontent.com/jetstream/aivideo-cli/', parameters('pcsReleaseVersion'), '/solutions/remotemonitoring/single-vm/setup-wrapper.sh')]",
+            "metadata": {
+                "description": "The URL of the script to setup a single VM deployment. setup-wrapper.sh manages log file and invokes setup.sh"
+            }
+        },
+        "vmFQDNSuffix": {
+            "type": "string",
+            "defaultValue": "cloudapp.azure.com",
+            "allowedValues": [
+                "cloudapp.azure.com",
+                "cloudapp.chinacloudapi.cn",
+                "cloudapp.azure.de"
+            ]
+        },
+>>>>>>> aiv-deploy
         "azureWebsiteName": {
             "type": "string",
             "metadata": {
@@ -540,7 +580,7 @@
         "sku": "S1",
         "workerSize": "0",
         "repoURL": "https://github.com/Azure/reverse-proxy-dotnet.git",
-        "branch": "[parameters('pcsReleaseVersion')]",
+        "branch": "[parameters('pcsReverseProxyVersion')]",
         "hostingPlanName": "[parameters('azureWebsiteName')]",
         "azureMapsName": "[concat(take(uniqueString(subscription().subscriptionId, resourceGroup().id, parameters('solutionName')), 5), '-map')]",
         "azureMapsVersion": "2017-01-01-preview",
